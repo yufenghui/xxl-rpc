@@ -17,7 +17,7 @@ public class Environment {
 	/**
 	 * zk config file
 	 */
-	private static final String ZK_ADDRESS_FILE = "/data/webapps/xxl-conf.properties";
+	private static final String ZK_ADDRESS_FILE = "config.properties";
 
 	/**
 	 * zk address
@@ -25,7 +25,7 @@ public class Environment {
 	public static final String ZK_ADDRESS;		// zk地址：格式	ip1:port,ip2:port,ip3:port
 	
 	static {
-		Properties prop = PropertiesUtil.loadFileProperties(ZK_ADDRESS_FILE);
+		Properties prop = PropertiesUtil.loadProperties(ZK_ADDRESS_FILE);
 		ZK_ADDRESS = PropertiesUtil.getString(prop, "zkserver");
 	}
 	
